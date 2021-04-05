@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage
+             xmlns:local="clr-namespace:Pet.Tracker"
+             x:TypeArguments="local:PetsDetailsViewModel"  
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             mc:Ignorable="d"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+       
+             x:Class=" Pet.Tracker.PetsDetailsPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0" Padding="17">
+                <ScrollView>
+                    <ContentView>
+                        <Grid Padding="20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                                <RowDefinition Height="AUTO"/>
+                            </Grid.RowDefinitions>
+
+
+                      
+
+                      
+
+                            <!--Pet Details-->
+                            <StackLayout  Grid.Row="1">
+
+                                <Frame BorderColor="{StaticResource WhiteTextColor}" Padding="8" CornerRadius="5">
+
+                                    <Label Text="Pet Details" TextColor="{StaticResource BlackTextColor}"
+                                       FontFamily="{StaticResource NunitoLight}"
+                                       FontSize="{StaticResource MidMediumSize}"
+                                           HorizontalTextAlignment="Start"
+                       />
+                                </Frame>
+                            </StackLayout>
+
+                            <!--Image and name-->
+                            <StackLayout Grid.Row="2" Orientation="Horizontal" Margin="0,0,0,0">
+
+
+                                <Entry Placeholder="Name"  WidthRequest="200" Margin="0,10,0,0"
+                                   FontFamily="{StaticResource NunitoRegular}"
+                                   FontSize="{StaticResource MidMediumSize}"
+                     
+                      
+                            />
+                            </StackLayout>
+                            <!--Overview-->
+                            <StackLayout Grid.Row="3" Orientation="Horizontal" Margin="0,20,0,0" >
+
+                                <!--Notification and overview-->
+                                <StackLayout Orientation="Vertical" Spacing="10" Padding="0" Margin="0,0,0,0" >
+                                    <Label Text="Overview" 
+                                      Margin="10,0,0,0"
+                                      FontFamily="{StaticResource NunitoRegular}"
+                                       TextColor="{StaticResource BlackTextColor}"
+                                       FontSize="{StaticResource MidMediumSize}"
+                           />
+
+                                    <Button Text="New Born" Style="{StaticResource BorderedButton}"
+                                            HeightRequest="37"
+                                            FontSize="{StaticResource LittleSize}"
+                                            ImageSource="{FontImage
+                                        Glyph={StaticResource FontAwesomeNotificationIcon},
+                                        Color={StaticResource GreenColor},
+                                        Size={StaticResource LittleSize},
+                                        FontFamily={StaticResource FontAwesomeSolid}}"
+                                        ContentLayout="left,0"
+                            />
+
+
+                                </StackLayout>
+
+                                <!--Type and age-->
+                                <StackLayout Orientation="Vertical" Spacing="0">
+                                    <Entry Placeholder="Type"  WidthRequest="150" Margin="0,0,0,0"
+                                   FontFamily="{StaticResource NunitoRegular}"
+                                   FontSize="{StaticResource LittleSize}"
+                       />
+
+                                    <Entry Placeholder="Age"  WidthRequest="150" Margin="0,0,0,0"
+                                       FontFamily="{StaticResource NunitoRegular}"
+                                       FontSize="{StaticResource LittleSize}"
+                  
+                      
+                       />
+                                </StackLayout>
+
+                            </StackLayout>
+
+
+                            <!--Info-->
+                            <StackLayout Orientation="Horizontal" Grid.Row="4" Spacing="20" Margin="0,10,0,0" >
+
+                                <Label Text="Info" TextColor="{StaticResource BlackTextColor}"
+                           FontFamily="{StaticResource NunitoSemiBold}"
+                       Margin="5,12,0,0"
+                       FontSize="{StaticResource MidMediumSize}"
+                       />
+
+                                <Entry Placeholder="Gender"   WidthRequest="100" Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource LittleSize}"
+                       />
+
+                                <Entry Placeholder="Neurtered" WidthRequest="100"  Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource LittleSize}"
+                  
+                      
+                       />
+                            </StackLayout>
+
+
+                            <!--Weight and height-->
+                            <StackLayout Orientation="Horizontal" Grid.Row="5" Spacing="20" Margin="0,10,0,0" >
+
+                                <Label Text="Weight" TextColor="{StaticResource BlackTextColor}"
+                           FontFamily="{StaticResource NunitoSemiBold}"
+                       Margin="5,12,0,0"
+                       FontSize="{StaticResource MidMediumSize}"
+                       />
+
+                                <Entry Placeholder="20 lb"   WidthRequest="50" Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource LittleSize}"
+                       />
+
+                                <Label Text="Height" TextColor="{StaticResource BlackTextColor}"
+                           FontFamily="{StaticResource NunitoSemiBold}"
+                       Margin="10,12,0,0"
+                       FontSize="{StaticResource MidMediumSize}"
+                       />
+                                <Entry Placeholder="1'1" WidthRequest="60"  Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource MidMediumSize}"
+                  
+                      
+                       />
+                            </StackLayout>
+
+                            <!--Notes-->
+                            <StackLayout Orientation="Horizontal" Grid.Row="6" Spacing="23" Margin="0,20,0,0">
+
+                                <Label Text="Notes" TextColor="{StaticResource BlackTextColor}"
+                           FontFamily="{StaticResource NunitoSemiBold}"
+                       Margin="5,5,0,0"
+                       FontSize="{StaticResource MidMediumSize}"
+                       />
+                                <Editor Text="He farts a lot, So be warned. Avoid being in a closed space with him"
+                       TextColor="{StaticResource BlackTextColor}"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       HeightRequest="85"
+                        WidthRequest="220"
+                       FontSize="{StaticResource LittleSize}"
+                        />
+
+                            </StackLayout>
+
+                   
+
+                        </Grid>
+                    </ContentView>
+
+                </ScrollView>
+            </StackLayout>
+
+            <!--Next Button-->
+            <Button 
+                Text="Next" Grid.Row="1" Command="{Binding RegisterCommand}"
+                 Style="{StaticResource NormalButton}" 
+                 CornerRadius="0" >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="0.8" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
+                                <Setter Property="BorderColor" Value="Transparent"/>
+                                <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}"/>
+
+                            </VisualState.Setters>
+                        </VisualState>
+
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+        </Grid>
+        
+    </ContentPage.Content>
+</local:BasePage>

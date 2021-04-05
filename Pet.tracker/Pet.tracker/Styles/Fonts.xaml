@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+          
+             >
+
+    <!--Font sizes-->
+
+    <OnPlatform x:Key="LittleSize"
+                            x:TypeArguments="x:Double"
+                            iOS="11"
+                            Android="12"
+                        
+                    />
+
+    <OnPlatform x:Key="MidMediumSize"
+                            x:TypeArguments="x:Double"
+                            iOS="12"
+                            Android="14"
+                   />
+
+    <OnPlatform x:Key="MediumSize"
+                            x:TypeArguments="x:Double"
+                            iOS="14"
+                            Android="16"
+                     />
+
+    <OnPlatform x:Key="LargeSize"
+                            x:TypeArguments="x:Double"
+                            iOS="16"
+                            Android="18"
+                     />
+
+    <OnPlatform x:Key="LargerSize"
+                            x:TypeArguments="x:Double"
+                            iOS="18"
+                            Android="20"
+                     />
+
+    <OnPlatform x:Key="BigSize"
+                            x:TypeArguments="x:Double"
+                            iOS="20"
+                            Android="24"
+                    />
+
+    <OnPlatform x:Key="ExtraBigSize"
+                          x:TypeArguments="x:Double"
+                          iOS="24"
+                          Android="32"
+                    />
+
+    <OnPlatform x:Key="HugeSize"
+                            x:TypeArguments="x:Double"
+                            iOS="32"
+                            Android="48"
+                   
+                    />
+
+
+    <!-- Font Awesome -->
+    <OnPlatform x:TypeArguments="x:String" 
+                    x:Key="FontAwesomeBrands"
+                    Android="fa-brands.otf#Font Awesome 5 Brands Regular" 
+                    iOS="Font Awesome 5 Free"       
+                            />
+
+    <OnPlatform x:TypeArguments="x:String" 
+                    x:Key="FontAwesomeSolid"
+                    Android="fa-solid.otf#Font Awesome 5 Free Solid" 
+                    iOS="Font Awesome 5 Free"       
+                            />
+
+
+    <OnPlatform x:TypeArguments="x:String" 
+                    x:Key="FontAwesomeRegular"
+                    Android="fa-regular.otf#Font Awesome 5 Free Regular" 
+                    iOS="Font Awesome 5 Free"      
+                            />
+
+    <!-- FontAwesome Icons -->
+    <x:String x:Key="FontAwesomePawIcon">&#xf1b0;</x:String>
+    <x:String x:Key="FontAwesomeTransferIcon">&#xf362;</x:String>
+    <x:String x:Key="FontAwesomeLocationIcon">&#xf3c5;</x:String>
+    <x:String x:Key="FontAwesomeNotificationIcon">&#xf0f3;</x:String>
+    <x:String x:Key="FontAwesomeCentersIcon">&#xf47d;</x:String>
+    <x:String x:Key="FontAwesomeLockIcon">&#xf023;</x:String>
+    <x:String x:Key="FontAwesomeHelpIcon">&#xf059;</x:String>
+    <x:String x:Key="FontAwesomeDoctorIcon">&#xf0f0;</x:String>
+    <x:String x:Key="FontAwesomeSearchIcon">&#xf002;</x:String>
+    <x:String x:Key="FontAwesomePhoneIcon">&#xf3cd;</x:String>
+    <x:String x:Key="FontAwesomeDogIcon">&#xf6d3;</x:String>
+    <x:String x:Key="FontAwesomeMaleIcon">&#xf222;</x:String>
+    <x:String x:Key="FontAwesomeFemaleIcon">&#xf221;</x:String>
+    <x:String x:Key="FontAwesomeWeightIcon">&#xf496;</x:String>
+    <x:String x:Key="FontAwesomeUserIcon">&#xf4ff;</x:String>
+    <x:String x:Key="FontAwesomeAddressIcon">&#xf2bb;</x:String>
+    <x:String x:Key="FontAwesomeMailIcon">&#xf658;</x:String>
+    <x:String x:Key="FontAwesomeGlobeIcon">&#xf0ac;</x:String>
+
+
+</ResourceDictionary>

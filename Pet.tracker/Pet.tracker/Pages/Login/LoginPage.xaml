@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage
+             xmlns:local="clr-namespace:Pet.Tracker"
+             x:TypeArguments="local:LoginViewModel" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             x:Class="Pet.Tracker.LoginPage"
+             NavigationPage.HasNavigationBar="False"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.PresentationMode="Animated"
+    >
+    
+    <ContentPage.Content>
+        <ScrollView>
+            
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Padding="20">
+            
+            <!--Icons-->
+            <Image Source="logo.png" 
+                   Margin="0,0,0,0"
+                   HorizontalOptions="Center"
+                   HeightRequest="100" WidthRequest="100"/>
+
+            <!--Text for logo-->
+            <Label Text="pet" 
+                   FontSize="58"
+                   Margin="0,-40,10,0"
+                   HorizontalTextAlignment="Center"
+                   TextColor="{StaticResource GreenColor}"
+                   FontFamily="{StaticResource NunitoBold}"/>
+
+            <Label Text="Tracker" 
+                   FontSize="30"
+                   Margin="125,-30,0,0"
+                   TextColor="Gray"
+                   FontFamily="{StaticResource NunitoBold}"/>
+
+            <!--Text entries-->
+            <StackLayout Orientation="Horizontal" Margin="0,20,0,10">
+
+                <Image Source="{FontImage Color={StaticResource GreenColor},
+                    Glyph={StaticResource FontAwesomeUserIcon},
+                    FontFamily={StaticResource FontAwesomeSolid},
+                    Size=20}"/>
+
+                <Entry Placeholder="Email" 
+                       Text="{Binding Email}"
+                       FontSize="{StaticResource LittleSize}"
+                       PlaceholderColor="Gray" x:Name="Email" WidthRequest="280"/>
+
+            </StackLayout>
+
+            <!--Text entries-->
+                <StackLayout Orientation="Horizontal" Spacing="15" Margin="0,10,0,50">
+
+                <Image Source="{FontImage Color={StaticResource GreenColor},
+                    Glyph={StaticResource FontAwesomeLockIcon},
+                    FontFamily={StaticResource FontAwesomeSolid},
+                    Size=20}"/>
+
+                <Entry Placeholder="Password" 
+                       Text="{Binding Password}"
+                       FontSize="{StaticResource LittleSize}"
+                       IsPassword="True" x:Name="Password" PlaceholderColor="Gray" WidthRequest="280"/>
+
+            </StackLayout>
+
+            <!--Login Button-->
+                <Button Text="Login" 
+                    FontSize="{StaticResource LittleSize}"
+                    Style="{StaticResource NormalButton}" 
+                        IsEnabled="{Binding LoginIsRunning}"
+                        FontFamily="{StaticResource NunitoBold}" 
+                        Command="{Binding LoginCommand}">
+
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale"
+                            Value="1" />
+                                </VisualState.Setters>
+                            </VisualState>
+
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                    <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
+                                    <Setter Property="BorderColor" Value="Transparent"/>
+                                    <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}"/>
+
+                                </VisualState.Setters>
+                            </VisualState>
+
+
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
+
+                <!--Or-->
+                <Label Text="Or"
+                       FontFamily="{StaticResource NunitoSemiBold}"
+                       FontSize="{StaticResource MidMediumSize}"
+                       TextColor="{StaticResource BlackTextColor}"
+                       HorizontalTextAlignment="Center"
+                 />
+
+                <!--New User button-->
+                <Button Text="New User? Sign up" Style="{StaticResource ButtonTextStyle}"
+                              FontSize="{StaticResource LittleSize}" 
+                        Command="{Binding RegisterCommand}">
+                    <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="Scale"
+                                                                 Value="1" />
+                                    </VisualState.Setters>
+                                </VisualState>
+
+                                <VisualState x:Name="Pressed">
+                                    <VisualState.Setters>
+                                    <Setter Property="Scale" Value="0.8" />
+                                 
+                                        <Setter Property="TextColor" Value="{StaticResource BlackTextColor}"/>
+
+                                    </VisualState.Setters>
+                                </VisualState>
+
+
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                </Button>
+
+                <!--Terms and condition-->
+                <Label Text="By signing up you indicate that you have read and 
+                            agreed to the Patch Terms of Service"
+                   FontSize="{StaticResource LittleSize}"
+                   LineBreakMode="WordWrap"
+                   TextColor="Gray"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="End"
+                   />
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</local:BasePage>

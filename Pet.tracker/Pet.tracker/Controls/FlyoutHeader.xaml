@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class=" Pet.Tracker.FlyoutHeader">
+  <ContentView.Content>
+      <StackLayout BackgroundColor="White" HeightRequest="80">
+            <Label LineHeight="12" FontSize="Large" VerticalOptions="Center"  Margin="30,25,0,0" FontFamily="{StaticResource NunitoBold}">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Pet " TextColor="Gray"/>
+                        <Span Text="Tracker" TextColor="Green"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+  </ContentView.Content>
+</ContentView>

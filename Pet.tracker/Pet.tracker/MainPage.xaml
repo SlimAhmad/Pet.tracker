@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:Controls="clr-namespace: Pet.Tracker"
+       mc:Ignorable="d"
+       xmlns:local="clr-namespace: Pet.Tracker"
+       x:Class=" Pet.Tracker.MainPage"
+       Style="{StaticResource BaseShellStyle}"
+       Shell.PresentationMode="ModalAnimated"
+       
+       >
+
+    <!--FlyoutHeader template-->
+    <Shell.FlyoutHeader>
+        <Controls:FlyoutHeader/>
+    </Shell.FlyoutHeader>
+
+
+    <!--<TabBar Shell.TabBarIsVisible="False" Route="boards">
+         Loading/Start Page 
+        <ShellContent  Route="loading" ContentTemplate="{DataTemplate local:LoadingPage}" />
+
+         Login and Registration Page 
+        <ShellContent Route="login"
+                  ContentTemplate="{DataTemplate local:LoginPage}">
+        </ShellContent>
+    </TabBar>-->
+
+    <!--FlyoutItems-->
+    <FlyoutItem Title="Home"
+                Route="main"
+                FlyoutDisplayOptions="AsSingleItem"
+                Icon="{FontImage Glyph={StaticResource FontAwesomePawIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}, 
+                                Color=LimeGreen}"
+               
+                >
+
+
+        <ShellContent Title="Home"
+                      Route="home"
+                      Icon="{FontImage Glyph={StaticResource FontAwesomePawIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}}"
+                      ContentTemplate="{DataTemplate local:HomePage}"/>
+        <ShellContent Title="Notification"
+                      Icon="{FontImage Glyph={StaticResource FontAwesomeNotificationIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}}"
+                      ContentTemplate="{DataTemplate local:NotificationPage}"/>
+        <ShellContent Title="Transfer"
+                  Icon="{FontImage Glyph={StaticResource FontAwesomeTransferIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}}"
+                      ContentTemplate="{DataTemplate local:TransferPage}"/>
+        <ShellContent Title="Centers"
+                       Icon="{FontImage Glyph={StaticResource FontAwesomeCentersIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}}"
+                      ContentTemplate="{DataTemplate local:VetCentersPage}"/>
+    </FlyoutItem>
+
+    <MenuItem Text="Find My Pet"
+                       Icon="{FontImage Glyph={StaticResource FontAwesomeLocationIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}, 
+                                Color=LimeGreen}"
+                                 Command="{Binding FindPetCommand}"
+                    />
+
+    <MenuItem Text="Add New Pet"
+                      Icon="{FontImage Glyph={StaticResource  FontAwesomeDogIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}, 
+                                Color=LimeGreen}"
+                                Command="{Binding AddPetCommand}"
+                      />
+
+    <MenuItem Text="Contact us"
+              IconImageSource="{FontImage Glyph={StaticResource FontAwesomeHelpIcon},
+                                FontFamily={StaticResource FontAwesomeRegular}, 
+                                Color=LimeGreen}"
+                                Command="{Binding ContactCommand}"
+              />
+
+    <MenuItem Text="Logout"
+              IconImageSource="{FontImage Glyph={StaticResource FontAwesomeLockIcon},
+                                FontFamily={StaticResource FontAwesomeSolid}, 
+                                Color=LimeGreen}" Command="{Binding LogoutCommand}"/>
+
+
+</Shell>

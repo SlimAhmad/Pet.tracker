@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage 
+             x:TypeArguments="local:RecieveViewModel"
+             xmlns:local="clr-namespace:Pet.Tracker"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+             mc:Ignorable="d"
+             Shell.TabBarIsVisible="False"
+             x:Class=" Pet.Tracker.IncomingDetailsPage">
+
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Receive Details"
+                   Margin="0,14,0,0"
+                   FontSize="{StaticResource LargeSize}"
+                   FontFamily="{StaticResource NunitoSemiBold}"
+                   TextColor="{StaticResource WhiteTextColor}" 
+                   VerticalOptions="Center"/>
+        </StackLayout>
+
+    </Shell.TitleView>
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="450"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <ScrollView>
+
+
+                <StackLayout>
+
+
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="AUTO"/>
+                            <RowDefinition Height="AUTO"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                                <ColumnDefinition Width="AUTO"/>
+                            </Grid.ColumnDefinitions>
+
+                            <StackLayout Orientation="Horizontal" Margin="0,20,0,0">
+
+                                <!--Profile picture-->
+                                <circleImage:CircleImage
+                                    Grid.Column="0"
+                                    Margin="0,0,0,0"
+                                    
+                                    BorderColor="{StaticResource WhiteTextColor}"
+                                    BorderThickness="1"
+                                    HeightRequest="60"
+                                    VerticalOptions="Center"
+                                    Source="dog.jpg"             
+                                    WidthRequest="90" />
+
+
+                                <!--Status texts-->
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="Lucky"
+                                   FontSize="{StaticResource MediumSize}"
+                                       TextColor="{StaticResource BlackTextColor}"
+                                       FontFamily="{StaticResource NunitoBold}"
+                                       />
+                                    <Label Text="Breed: Bull Dog"
+                                       TextColor="{StaticResource BlueColor}"
+                                    FontFamily="{StaticResource NunitoSemiBold}"
+                                   />
+
+                                    <Label Text="Very bad dog shits all over the place"
+                                       TextColor="{StaticResource BlackTextColor}"
+                                       MaxLines="1"
+                                   LineBreakMode="TailTruncation"
+                                   />
+                                </StackLayout>
+
+
+
+
+                                <!--Age sand Gender texts-->
+                                <StackLayout Grid.Column="2"  Margin="20,24,0,0" VerticalOptions="Center" Spacing="5">
+                                    <Label Text="Age: 3"
+                                   Grid.Column="3"
+                                       Margin="0,1,0,0"
+                                       HorizontalTextAlignment="Center"
+                                       FontFamily="{StaticResource NunitoBold}"
+                                       TextColor="{StaticResource BlackTextColor}"/>
+
+                                    <Button Text="Male" 
+                                    Margin="0,0,0,10"
+                                    Grid.Column="3"
+                                    Style="{StaticResource NormalButton}" 
+                                    VerticalOptions="Center" 
+                                    HeightRequest="30"
+                                    WidthRequest="70" 
+                                    HorizontalOptions="End"
+                                 
+                                    BackgroundColor="{StaticResource PurpleColor}"/>
+                                </StackLayout>
+
+                            </StackLayout>
+
+
+                        </Grid>
+
+                        <StackLayout Grid.Row="1" BackgroundColor="{StaticResource GreenColor}" Padding="10" >
+
+                            <Label Text="ACCEPT TRANSFER" 
+                                 FontFamily="{StaticResource NunitoSemiBold}"
+                                   TextColor="{StaticResource WhiteTextColor}"/>
+                        </StackLayout>
+
+
+                        <StackLayout Orientation="Horizontal" Grid.Row="2" Padding="10">
+
+                            <Label Text="{StaticResource FontAwesomePhoneIcon}"
+                                  FontFamily="{StaticResource FontAwesomeSolid}"
+                                   TextColor="{StaticResource GreenColor}"
+                                   FontSize="{StaticResource HugeSize}"
+                               Margin="20,0,20,0"
+                                   VerticalTextAlignment="Center"
+                                  />
+
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="Pet Transfer From:" 
+                                         FontFamily="{StaticResource NunitoBold}"
+                                       TextColor="{StaticResource PurpleColor}"/> 
+                                <Label TextColor="{StaticResource BlackTextColor}" 
+                                       FontFamily="{StaticResource NunitoSemiBold}"
+                                       Text="Brandy Paul"/>
+                                <Label TextColor="Gray" Text="+234058382350"/>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <BoxView BackgroundColor="LightGray" HeightRequest="1" Grid.Row="3"/>
+
+                        <StackLayout  HorizontalOptions="Center" VerticalOptions="Center" Margin="0,10,0,0"  Grid.Row="4" Padding="30,0,30,0">
+
+                            <Label Text="Enter Verification Code To Complete this Transfer" TextColor="Gray" HorizontalTextAlignment="Center"/>
+
+                            <!--Text entries-->
+                            <StackLayout  Padding="30,0,30,0">
+
+                                <Entry Placeholder="* * * *"  Keyboard="Numeric" FontSize="40" PlaceholderColor="{StaticResource PurpleColor}" 
+                                          HorizontalTextAlignment="Center"
+                                           WidthRequest="150"/>
+
+                            </StackLayout>
+
+
+                       
+
+                        </StackLayout>
+
+                    </Grid>
+                </StackLayout>
+            </ScrollView>
+
+            <Button Text="Approve" Style="{StaticResource NormalButton}" 
+                        FontSize="{StaticResource MediumSize}"
+                        CornerRadius="0"
+                        Grid.Row="1"/>
+        </Grid>
+    </ContentPage.Content>
+</local:BasePage>

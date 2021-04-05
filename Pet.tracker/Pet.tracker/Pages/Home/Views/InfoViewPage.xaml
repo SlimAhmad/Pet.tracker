@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class=" Pet.Tracker.InfoViewPage">
+  <ContentView.Content>
+        <!--Basic pets information-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+                <RowDefinition Height="AUTO"/>
+            </Grid.RowDefinitions>
+
+            <!--Pets information-->
+            <StackLayout Orientation="Horizontal" Spacing="20" Grid.Row="0"
+                                         HorizontalOptions="Center" 
+                                         Margin="0,3,0,0">
+
+                <!--Gender-->
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{StaticResource FontAwesomeMaleIcon}"
+                                           TextColor="{StaticResource BlackTextColor}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"/>
+                        <Label Text="Gender" TextColor="{StaticResource GreenColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                               FontSize="{StaticResource MidMediumSize}"
+                               />
+                    </StackLayout>
+                    <Label Text="{Binding Gender}" TextColor="{StaticResource BlackTextColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                                           HorizontalTextAlignment="Center"
+                            FontSize="{StaticResource MidMediumSize}"
+                                           />
+                </StackLayout>
+
+                <!--Weight-->
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{StaticResource FontAwesomeWeightIcon}"
+                                           TextColor="{StaticResource BlackTextColor}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"/>
+
+                        <Label Text="Weight" TextColor="{StaticResource GreenColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                                FontSize="{StaticResource MidMediumSize}"
+                               />
+                    </StackLayout>
+                    <Label Text="{Binding Weight, StringFormat='{0} lb'}" TextColor="{StaticResource BlackTextColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                                            HorizontalTextAlignment="Center"
+                            FontSize="{StaticResource MidMediumSize}"
+                                           />
+                </StackLayout>
+
+                <!--Height-->
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                    
+                        <Label Text="Height" TextColor="{StaticResource GreenColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                                FontSize="{StaticResource MidMediumSize}"
+                               />
+                    </StackLayout>
+                    <Label Text="{Binding Height}" TextColor="{StaticResource BlackTextColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                                            HorizontalTextAlignment="Center"
+                            FontSize="{StaticResource MidMediumSize}"
+                                           />
+                </StackLayout>
+
+                <!--Status-->
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{StaticResource FontAwesomePawIcon}"
+                                           TextColor="{StaticResource BlackTextColor}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"/>
+                        <Label Text="Status" TextColor="{StaticResource GreenColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                                FontSize="{StaticResource MidMediumSize}"
+                               />
+                    </StackLayout>
+                    <Label Text="Adopted" TextColor="{StaticResource BlackTextColor}"
+                                           FontFamily="{StaticResource NunitoSemiBold}"
+                                            HorizontalTextAlignment="Center"
+                            FontSize="{StaticResource MidMediumSize}"
+                                           />
+                </StackLayout>
+            </StackLayout>
+
+            <!--Curved background-->
+            <BoxView
+                                Grid.Row="1"
+                                BackgroundColor="#F5F5F7"
+                                Margin="0,0,0,0"
+                                CornerRadius="20,20,0,0"
+                                HeightRequest="150"
+                                />
+
+            <!--Notes-->
+            <StackLayout Grid.Row="1" Margin="20,30,0,0" Padding="10,0,10,0">
+                <Label TextColor="{StaticResource BlueColor}" 
+                                       Text="Notes"
+                                       FontSize="{StaticResource MediumSize}"
+                                       FontFamily="{StaticResource NunitoBold}"/>
+                <Label TextColor="{StaticResource BlackTextColor}" 
+                                       Text="{Binding Description}" 
+                                       FontSize="{StaticResource MidMediumSize}"
+                                       FontFamily="{StaticResource NunitoRegular}"
+                                        />
+            </StackLayout>
+
+        </Grid>
+    </ContentView.Content>
+</ContentView>

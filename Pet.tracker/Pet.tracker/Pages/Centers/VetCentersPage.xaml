@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage x:TypeArguments="local:VetCentersViewModel" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace: Pet.Tracker"
+             mc:Ignorable="d"
+             x:Class=" Pet.Tracker.VetCentersPage" 
+                Shell.NavBarHasShadow="True"
+                >
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Vet Centers"
+                   Margin="0,14,0,0"
+                   FontSize="{StaticResource LargeSize}"
+                   FontFamily="{StaticResource NunitoSemiBold}"
+                   TextColor="{StaticResource WhiteTextColor}" 
+                   VerticalOptions="Center"/>
+        </StackLayout>
+
+    </Shell.TitleView>
+
+    <Shell.SearchHandler>
+        <local:VetsSearchHandler SearchBoxVisibility="Collapsible" >
+
+
+            <local:VetsSearchHandler.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10">
+
+                        <StackLayout>
+                            <!--Title-->
+                            <Label Grid.Column="1"
+                         
+                               Text="{Binding Title}"
+                               TextColor="{StaticResource GreenColor}" />
+
+                            <!--Address-->
+                            <Label Grid.Column="1"
+                         
+                               Text="{Binding Address}"
+                               MaxLines="1"
+                               LineBreakMode="TailTruncation"    
+                                   />
+                        </StackLayout>
+
+                    </Grid>
+                </DataTemplate>
+            </local:VetsSearchHandler.ItemTemplate>
+        </local:VetsSearchHandler>
+
+    </Shell.SearchHandler>
+    <ContentPage.Content>
+
+        <ListView 
+                  CachingStrategy="RecycleElement"
+                  ItemsSource="{Binding VetCenters}"  SelectionMode="Single"  HasUnevenRows="True" 
+                  SeparatorColor="{StaticResource PurpleColor}"  SelectedItem="{Binding SelectedItem,Mode=TwoWay}" >
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:ViewCellControl SelectedItemBackgroundColor="LightGray">
+
+                        <Grid Padding="15" Margin="0,0,0,0" >
+
+                            <!--Title texts-->
+                            <StackLayout >
+
+                                <Label Text="{Binding Title}"
+                                       TextColor="{StaticResource GreenColor}"
+                                       FontFamily="{StaticResource NunitoBold}"
+                                       />
+                                <!--Area and State texts-->
+                                <Label TextColor="{StaticResource BlackTextColor}">
+
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Area}"/>
+                                            <Span Text="{Binding State, StringFormat=', {0}'}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+
+                                <!--Address texts-->
+                                <Label Text="{Binding Address}"
+                                       TextColor="{StaticResource BlackTextColor}"
+                                  
+                                     
+                                       />
+
+                            </StackLayout>
+
+
+                        </Grid>
+                    </local:ViewCellControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </ContentPage.Content>
+</local:BasePage>

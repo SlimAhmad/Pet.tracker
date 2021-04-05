@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage
+             xmlns:local="clr-namespace:Pet.Tracker"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             x:Class="Pet.Tracker.LoadingPage"
+    >
+    
+    <ContentPage.Content>
+     
+            
+
+        <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Padding="20">
+            
+            <!--Icons-->
+            <Image Source="logo.png" 
+                   Margin="0,0,0,0"
+                   HorizontalOptions="Center"
+                   HeightRequest="100" WidthRequest="100"/>
+
+            <!--Text for logo-->
+            <Label Text="pet" 
+                   FontSize="58"
+                   Margin="0,-40,10,0"
+                   HorizontalTextAlignment="Center"
+                   TextColor="{StaticResource GreenColor}"
+                   FontFamily="{StaticResource NunitoBold}"/>
+
+            <Label Text="Tracker" 
+                   FontSize="30"
+                   Margin="125,-30,0,0"
+                   TextColor="Gray"
+                   FontFamily="{StaticResource NunitoBold}"/>
+
+
+            </StackLayout>
+    
+    </ContentPage.Content>
+</local:BasePage>

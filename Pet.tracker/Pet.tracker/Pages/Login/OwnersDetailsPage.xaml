@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage
+             xmlns:local="clr-namespace:Pet.Tracker"
+             x:TypeArguments="local:OwnerDetailsViewModel" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Shell.TabBarIsVisible="False"
+             Shell.NavBarIsVisible="False"
+             NavigationPage.HasNavigationBar="False"
+             x:Class=" Pet.Tracker.OwnersDetailsPage">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <StackLayout Grid.Row="0">
+                <ScrollView>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="AUTO"/>
+                        </Grid.RowDefinitions>
+
+                        <StackLayout Padding="20" Margin="10,0,10,0">
+
+
+                            <!--Logo-->
+                            <StackLayout Orientation="Vertical" HorizontalOptions="Center" Grid.Column="1" Margin="0,0,0,10">
+                                <!--Icons-->
+                                <Image Source="logo.png" 
+                                       Margin="0,0,0,0"
+                                       HorizontalOptions="Center"
+                                       HeightRequest="60" WidthRequest="60"/>
+
+                                <!--Text for logo-->
+                                <Label Text="pet" 
+                                       FontSize="38"
+                                       Margin="5,-25,10,0"
+                                       HorizontalTextAlignment="Center"
+                                       TextColor="{StaticResource GreenColor}"
+                                       FontFamily="{StaticResource NunitoBold}"/>
+
+                                <Label Text="Tracker" 
+                                       FontSize="20"
+                                       Margin="25,-20,0,0"
+                                       TextColor="Gray"
+                                       FontFamily="{StaticResource NunitoBold}"/>
+                            </StackLayout>
+
+                            <!--User Details-->
+                            <Frame BorderColor="{StaticResource WhiteTextColor}" HasShadow="True" Padding="8" CornerRadius="5">
+
+                                <Label Text="User Details."
+                                        
+                                TextColor="{StaticResource BlackTextColor}"
+                               FontFamily="{StaticResource NunitoLight}"
+                               FontSize="{StaticResource MidMediumSize}"
+                               HorizontalTextAlignment="Start"
+                       />
+                            </Frame>
+
+                            <!--Name-->
+                            <StackLayout Orientation="Horizontal" >
+
+                                <Image Source="{FontImage Color={StaticResource GreenColor},
+                            Glyph={StaticResource FontAwesomeUserIcon},
+                            FontFamily={StaticResource FontAwesomeSolid},Size=20}"/>
+
+                                <!--Name Entry-->
+                                <Entry Placeholder="Name" WidthRequest="240"  Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource MidMediumSize}"
+                      
+                       />
+                            </StackLayout>
+
+
+                            <!--Contact phone number-->
+                            <StackLayout Orientation="Horizontal" Spacing="18">
+                                <Image Source="{FontImage Color={StaticResource GreenColor},
+                                Glyph={StaticResource FontAwesomePhoneIcon},
+                                FontFamily={StaticResource FontAwesomeSolid},Size=20}"/>
+
+                                <Entry Placeholder="Phone No." WidthRequest="240"  Margin="0,0,0,0"
+                           FontFamily="{StaticResource NunitoRegular}"
+                           FontSize="{StaticResource MidMediumSize}"
+                           Keyboard="Telephone"
+                     
+                           />
+                            </StackLayout>
+
+
+                            <!--Email -->
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Image Source="{FontImage Color={StaticResource GreenColor},
+                            Glyph={StaticResource FontAwesomeMailIcon},
+                            FontFamily={StaticResource FontAwesomeSolid},Size=20}"/>
+
+                                <!--Email Entry-->
+                                <Entry Placeholder="Email" WidthRequest="240"  Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource MidMediumSize}"
+                      
+                       />
+                            </StackLayout>
+
+                            <!--Next of kin Details-->
+                            <Frame BorderColor="{StaticResource WhiteTextColor}"  HasShadow="True" Padding="8" CornerRadius="5">
+
+                                <Label Text="Next of Kin Details" TextColor="{StaticResource BlackTextColor}"
+                                  FontFamily="{StaticResource NunitoLight}"
+                                  FontSize="{StaticResource MidMediumSize}"
+                                  HorizontalTextAlignment="Start"
+                       />
+                            </Frame>
+
+                            <!--Next of kin name-->
+                            <StackLayout Orientation="Horizontal">
+                                <Image Source="{FontImage Color={StaticResource GreenColor},
+                            Glyph={StaticResource FontAwesomeUserIcon},
+                            FontFamily={StaticResource FontAwesomeSolid},Size=20}"/>
+                                <!--Next of kin entry-->
+                                <Entry Placeholder="Next of Kin Name" WidthRequest="240"  Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource MidMediumSize}"
+                      
+                       />
+                            </StackLayout>
+
+                            <!--Next of email -->
+                            <StackLayout Orientation="Horizontal" Spacing="12">
+                                <Image Source="{FontImage Color={StaticResource GreenColor},
+                            Glyph={StaticResource FontAwesomeMailIcon},
+                            FontFamily={StaticResource FontAwesomeSolid},Size=20}"/>
+
+                                <!--Next of email Entry-->
+                                <Entry Placeholder="Next of Kin Email" WidthRequest="240"  Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource MidMediumSize}"
+                      
+                       />
+                            </StackLayout>
+
+                            <!--Next of Phone no.-->
+                            <StackLayout Orientation="Horizontal" Spacing="18">
+                                <Image Source="{FontImage Color={StaticResource GreenColor},
+                            Glyph={StaticResource FontAwesomePhoneIcon},
+                            FontFamily={StaticResource FontAwesomeSolid},Size=20}"/>
+
+                                <!--Next of Phone no. Entry-->
+                                <Entry Placeholder="Next of kin No." WidthRequest="240"  Margin="0,0,0,0"
+                       FontFamily="{StaticResource NunitoRegular}"
+                       FontSize="{StaticResource MidMediumSize}"
+                           Keyboard="Telephone"
+                      
+                       />
+                            </StackLayout>
+
+                            <!--Address-->
+                            <Frame BorderColor="{StaticResource WhiteTextColor}"
+                           Padding="8" CornerRadius="5" HasShadow="True">
+
+                                <Label Text="Address." TextColor="{StaticResource BlackTextColor}"
+                           FontFamily="{StaticResource NunitoLight}"
+                       FontSize="{StaticResource MidMediumSize}"
+                               HorizontalTextAlignment="Center"
+                       />
+                            </Frame>
+
+                            <!--longitude and latitude-->
+                            <StackLayout >
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="AUTO"/>
+                                        <ColumnDefinition Width="AUTO"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <!--Longitude-->
+                                    <StackLayout Grid.Column="0">
+                                        <!--Longitude label-->
+                                        <Label Text="Longitude" TextColor="{StaticResource BlackTextColor}"
+                                   FontFamily="{StaticResource NunitoRegular}"
+                                   Margin="3,12,0,0"
+                                   FontSize="{StaticResource MidMediumSize}"
+                             />
+
+                                        <!--Longitude Entry-->
+                                        <Entry Placeholder="Co'rds" WidthRequest="100"  Margin="0,0,0,0"
+                                   FontFamily="{StaticResource NunitoRegular}"
+                                   FontSize="{StaticResource MidMediumSize}"
+                             />
+                                    </StackLayout>
+
+                                    <!--latitude-->
+                                    <StackLayout Grid.Column="1">
+                                        <!--latitude Label-->
+                                        <Label Text="Latitude" TextColor="{StaticResource BlackTextColor}"
+                                    Grid.Column="1"
+                                   FontFamily="{StaticResource NunitoRegular}"
+                                   Margin="3,12,0,0"
+                                   FontSize="{StaticResource MidMediumSize}"
+                             />
+
+                                        <!--Latitude Entry-->
+                                        <Entry Placeholder="Co'rds" WidthRequest="100" 
+                                   Grid.Column="1"
+                                   Margin="0,0,0,0"
+                                   FontFamily="{StaticResource NunitoRegular}"
+                                   FontSize="{StaticResource MidMediumSize}"
+                             />
+                                    </StackLayout>
+
+                                    <!--Coordinates Button-->
+                                    <StackLayout Grid.Column="2" Margin="0,25,0,0">
+                                        <ImageButton Source="{FontImage Color={StaticResource GreenColor},
+                                    FontFamily={StaticResource FontAwesomeSolid},
+                                    Glyph={StaticResource FontAwesomePawIcon}}" 
+                                             BackgroundColor="Transparent">
+
+                                            <VisualStateManager.VisualStateGroups>
+                                                <VisualStateGroup x:Name="CommonStates">
+                                                    <VisualState x:Name="Normal">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="Scale"
+                                                      Value="1" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+
+                                                    <VisualState x:Name="Pressed">
+                                                        <VisualState.Setters>
+                                                            <Setter Property="Scale"
+                                                     Value="0.8" />
+                                                        </VisualState.Setters>
+                                                    </VisualState>
+
+
+                                                </VisualStateGroup>
+                                            </VisualStateManager.VisualStateGroups>
+                                        </ImageButton>
+                                    </StackLayout>
+
+
+
+
+                                </Grid>
+
+                            </StackLayout>
+
+                        </StackLayout>
+                    </Grid>
+
+                </ScrollView>
+            </StackLayout>
+
+            <!--Next Button-->
+            <Button 
+                Text="Next" Grid.Row="1" Command="{Binding RegisterCommand}"
+                 Style="{StaticResource NormalButton}" 
+                 CornerRadius="0" >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="0.8" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
+                                <Setter Property="BorderColor" Value="Transparent"/>
+                                <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}"/>
+
+                            </VisualState.Setters>
+                        </VisualState>
+
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+        </Grid>
+       
+    </ContentPage.Content>
+</local:BasePage>

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           
+             >
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles/Fonts.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--Font family-->
+    <OnPlatform x:Key="NunitoBold" x:TypeArguments="x:String"
+                            iOS="Nunito"
+                            Android="Nunito-Bold.ttf#Nunito"
+                            />
+
+    <OnPlatform x:Key="NunitoLight" x:TypeArguments="x:String"
+                            iOS="Nunito Light"
+                            Android="Nunito-Light.ttf#Nunito Light"
+                            />
+
+    <OnPlatform x:Key="NunitoRegular" x:TypeArguments="x:String"
+                            iOS="Nunito"
+                            Android="Nunito-Regular.ttf#Nunito"
+                            />
+
+    <OnPlatform x:Key="NunitoSemiBold" x:TypeArguments="x:String"
+                            iOS="Nunito SemiBold"
+                            Android="Nunito-SemiBold.ttf#Nunito SemiBold"
+                            />
+
+    <!--Styles-->
+    <Style TargetType="Label" x:Key="BaseLabelStyle">
+        <Setter Property="FontFamily" Value="{StaticResource NunitoLight}" />
+        <Setter Property="FontSize" Value="{StaticResource MidMediumSize}" />
+
+    </Style>
+
+
+    <Style TargetType="Button" x:Key="BaseButttonStyle">
+        <Setter Property="FontFamily" Value="{StaticResource NunitoSemiBold}" />
+        <Setter Property="FontSize" Value="{StaticResource MidMediumSize}" />
+    </Style>
+
+
+    <Style TargetType="Entry" x:Key="BaseEntryStyle">
+        <Setter Property="FontFamily" Value="{StaticResource NunitoLight}" />
+        <Setter Property="FontSize" Value="{StaticResource MidMediumSize}" />
+    </Style>
+
+  
+
+    <Style TargetType="Button" BasedOn="{StaticResource BaseButttonStyle}" />
+    <Style TargetType="Label" BasedOn="{StaticResource BaseLabelStyle}" />
+    <Style TargetType="Entry" BasedOn="{StaticResource BaseEntryStyle}" />
+
+
+    <!--Button styles-->
+    <Style TargetType="Button" BasedOn="{StaticResource BaseButttonStyle}" x:Key="BorderedButton">
+        <Setter Property="BorderColor" Value="{StaticResource GreenColor}"/>
+        <Setter Property="TextColor" Value="{StaticResource GreenColor}"/>
+        <Setter Property="CornerRadius" Value="60"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="BorderWidth" Value="3"/>
+        <Setter Property="WidthRequest" Value="115"/>
+        <Setter Property="FontSize" Value="{StaticResource LittleSize}"/>
+
+
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource BaseButttonStyle}" x:Key="NormalButton">
+        <Setter Property="BackgroundColor" Value="{StaticResource BlueColor}"/>
+        <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}"/>
+        <Setter Property="CornerRadius" Value="60"/>
+        <Setter Property="WidthRequest" Value="115"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="FontSize" Value="{StaticResource LittleSize}"/>      
+        
+
+    </Style>
+
+    <Style TargetType="Button" BasedOn="{StaticResource BaseButttonStyle}" x:Key="ButtonTextStyle">
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="{StaticResource GreenColor}"/>
+        <Setter Property="WidthRequest" Value="60"/>
+        <Setter Property="Padding" Value="0"/>
+       
+        <Setter Property="FontSize" Value="{StaticResource LittleSize}"/>
+
+
+    </Style>
+
+</ResourceDictionary>

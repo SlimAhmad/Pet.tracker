@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage
+             xmlns:local="clr-namespace:Pet.Tracker"
+             x:TypeArguments="local:ContactViewModel" 
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="True"
+             Shell.TabBarIsVisible="False"
+             x:Class=" Pet.Tracker.ContactPage">
+    <Shell.TitleView>
+        <StackLayout>
+            <Label Text="Contact Us"
+                   Margin="0,14,60,0"
+                   FontSize="{StaticResource LargeSize}"
+                   FontFamily="{StaticResource NunitoSemiBold}"
+                   TextColor="{StaticResource WhiteTextColor}" 
+                   VerticalTextAlignment="Center"
+                   HorizontalTextAlignment="Center"
+                   />
+        </StackLayout>
+    </Shell.TitleView>
+    <ContentPage.Content>
+        <ScrollView>
+            
+    
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="30" Padding="20">
+
+            <!--Logo-->
+            <StackLayout Orientation="Vertical" HorizontalOptions="Center" >
+                <!--Icons-->
+                <Image Source="logo.png" 
+                   Margin="0,0,0,0"
+                   HorizontalOptions="Center"
+                   HeightRequest="100" WidthRequest="100"/>
+
+                <!--Text for logo-->
+                <Label Text="pet" 
+                   FontSize="58"
+                   Margin="0,-40,10,0"
+                   HorizontalTextAlignment="Center"
+                   TextColor="{StaticResource GreenColor}"
+                   FontFamily="{StaticResource NunitoBold}"/>
+
+                <Label Text="Tracker" 
+                   FontSize="30"
+                   Margin="40,-30,0,0"
+                   TextColor="Gray"
+                   FontFamily="{StaticResource NunitoBold}"/>
+            </StackLayout>
+
+
+            <!--Texts 24hrs / 7days-->
+            <Label Text="Our customer portal is available 24hrs/ 7 days " 
+                                       FontSize="{StaticResource LargeSize}"
+                                       TextColor="{StaticResource BlackTextColor}"
+                                       HorizontalTextAlignment="Center"
+                                       FontFamily="{StaticResource NunitoBold}"/>
+
+
+            <!--Call Button-->
+            <Button 
+                Text="Call Us"
+                 Style="{StaticResource NormalButton}" 
+                 >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="0.8" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
+                                <Setter Property="BorderColor" Value="Transparent"/>
+                                <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}"/>
+
+                            </VisualState.Setters>
+                        </VisualState>
+
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+
+            <!--Email Button-->
+            <Button 
+                Text="Email Us" 
+                 Style="{StaticResource NormalButton}" 
+                 >
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal">
+                            <VisualState.Setters>
+                                <Setter Property="Scale"
+                            Value="1" />
+                            </VisualState.Setters>
+                        </VisualState>
+
+                        <VisualState x:Name="Pressed">
+                            <VisualState.Setters>
+                                <Setter Property="Scale" Value="0.8" />
+                                <Setter Property="BackgroundColor" Value="{StaticResource GreenColor}"/>
+                                <Setter Property="BorderColor" Value="Transparent"/>
+                                <Setter Property="TextColor" Value="{StaticResource WhiteTextColor}"/>
+
+                            </VisualState.Setters>
+                        </VisualState>
+
+
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</local:BasePage>

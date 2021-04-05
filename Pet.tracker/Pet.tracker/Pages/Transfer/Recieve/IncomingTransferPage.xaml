@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:BasePage x:TypeArguments="local:IncomingPetViewModel" 
+                 xmlns:local="clr-namespace:Pet.Tracker"
+                xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:circleImage="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin"
+                mc:Ignorable="d"
+                Shell.TabBarIsVisible="False"
+             x:Class=" Pet.Tracker.IncomingTransferPage">
+    <Shell.TitleView>
+            <StackLayout>
+                <Label Text="Receive Pets"
+                   Margin="0,14,0,0"
+                   FontSize="{StaticResource LargeSize}"
+                   FontFamily="{StaticResource NunitoSemiBold}"
+                   TextColor="{StaticResource WhiteTextColor}" 
+                   VerticalOptions="Center"/>
+            </StackLayout>
+
+        </Shell.TitleView>
+
+        <Shell.SearchHandler>
+        <local:PetsSearchHandler SearchBoxVisibility="Collapsible" >
+            <local:PetsSearchHandler.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.15*" />
+                                <ColumnDefinition Width="0.85*" />
+                            </Grid.ColumnDefinitions>
+                            <!--Profile picture-->
+                            <Image
+                                    Grid.Column="0"
+                                    HeightRequest="40"  
+                                    Source="{Binding Image}"             
+                                    WidthRequest="40" />
+                            <Label Grid.Column="1"
+                         
+                               Text="{Binding Name}"
+                               FontAttributes="Bold" />
+
+                        </Grid>
+                    </DataTemplate>
+                </local:PetsSearchHandler.ItemTemplate>
+            </local:PetsSearchHandler>
+
+        </Shell.SearchHandler>
+
+        <ContentPage.Content>
+
+            <ListView ItemsSource="{Binding Items}"   x:Name="List"
+                      CachingStrategy="RecycleElement" SelectionMode="Single"
+                      HasUnevenRows="True" SeparatorColor="LightGray" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" >
+
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <local:ViewCellControl SelectedItemBackgroundColor="LightGray" >
+                            <Grid Padding="5" Margin="0,10,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+
+                                    <ColumnDefinition Width="AUTO"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!--Profile picture-->
+                                <circleImage:CircleImage
+                                    Grid.Column="0"
+                                    Margin="0,0,0,0"
+                                    BorderColor="{StaticResource WhiteTextColor}"
+                                    BorderThickness="1"
+                                    HeightRequest="50"
+                                    VerticalOptions="Center"
+                                    Source="{Binding Image}"             
+                                    WidthRequest="90" />
+
+
+                                <!--Status texts-->
+                                <StackLayout Grid.Column="1" VerticalOptions="Center">
+                                    <Label Text="{Binding Name }"
+                                       TextColor="{StaticResource BlackTextColor}"
+                                       FontFamily="{StaticResource NunitoBold}"
+                                           FontSize="{StaticResource LittleSize}"
+                                       />
+                                    <Label Text="{Binding Breed, StringFormat='Breed: {0}'}"
+                                       TextColor="{StaticResource BlackTextColor}"
+                                             FontSize="{StaticResource LittleSize}"
+                                           />
+                                </StackLayout>
+
+                            <StackLayout Grid.Column="2" x:Name="IconStack" VerticalOptions="Center"  Margin="10">
+                                <Label x:Name="lblIcon"  Text="{StaticResource FontAwesomeTransferIcon}"
+                                           TextColor="{StaticResource RedColor}"
+                                           FontFamily="{StaticResource FontAwesomeSolid}"
+                                       FontSize="{StaticResource BigSize}"
+                                       />
+
+                            </StackLayout>
+
+                        </Grid>
+                        </local:ViewCellControl>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage.Content>
+</local:BasePage>
